@@ -45,7 +45,7 @@ module ActiveRecord
 
       attributes_collection.each do |attributes|
         attributes = attributes.with_indifferent_access
-
+        binding.pry
         if attributes['id'].blank?
           unless reject_new_record?(association_name, attributes)
             association.build(attributes.except(*unassignable_keys(assignment_opts)), assignment_opts)

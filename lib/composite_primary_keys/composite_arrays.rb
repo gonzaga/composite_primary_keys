@@ -14,7 +14,7 @@ module CompositePrimaryKeys
       when Array
         value.to_composite_keys
       when String
-        self.new(value.split(ID_SEP))
+        self.new(value.gsub(/[\[\]\s]/,'').split(ID_SEP))
       else
         raise(ArgumentError, "Unsupported type: #{value}")
       end

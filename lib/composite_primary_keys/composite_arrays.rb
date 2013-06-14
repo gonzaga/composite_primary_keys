@@ -24,6 +24,10 @@ module CompositePrimaryKeys
       # Doing this makes it easier to parse Base#[](attr_name)
       join(ID_SEP)
     end
+    
+    def inspect
+      to_s
+    end
   end
 end
 
